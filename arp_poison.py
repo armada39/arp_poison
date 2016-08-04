@@ -58,7 +58,7 @@ try:
                 raise getopt.GetoptError("'sleep' parameter error: "+msg.__repr__(),None)
 
     if len(opts[1]) == 0 :
-        raise getopt.GetoptError("'host' parameter missing",None)
+        raise getopt.GetoptError("[host] parameter missing",None)
     elif len(opts[1]) > 1 :
         raise getopt.GetoptError("Too many parameters : [%s]" % string.join(opts[1]),None)
     else:
