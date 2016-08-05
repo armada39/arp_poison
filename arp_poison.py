@@ -48,7 +48,7 @@ try:
         if opt == "-h":
             usage()
         elif opt == "-t":
-            target = mac2str(parm) # XXX get mac from IP
+            target = mac2str(parm) 
         elif opt == "-i":
             dev = parm
         elif opt == "-s":
@@ -79,7 +79,7 @@ try:
     s.bind((dev, ETH_P_ARP))
     mymac = s.getsockname()[4] 
     pkt = ether(mymac, target, ETH_P_ARP) + is_at(mymac, host)
-    disp = "%s -> %s   %s is-at %s" % (str2mac(mymac), str2mac(target), host, str2mac(mymac))
+    disp = "\n%s >> %s  \n%s is-at %s\n" % (str2mac(mymac), str2mac(target), host, str2mac(mymac))
     while 1:
     	s.send(pkt)
 	print disp
